@@ -7,6 +7,8 @@ namespace Lotto.ConsoleApp
         static void Main(string[] args)
         {
             int[] tippedNumbers = new int[6];
+            int numberOfGames;
+            Random rand = new Random();
 
             Console.WriteLine("Lottosimulation 6 aus 45");
             Console.WriteLine("========================");
@@ -42,6 +44,22 @@ namespace Lotto.ConsoleApp
             {
                 Console.WriteLine(tippedNumbers[m]);
             }
+
+            //LOTTOZIEHUNG
+            Console.Write("Wie viele Ziehungen lang wollen sie teilnehmen: ");
+            numberOfGames = Convert.ToInt32(Console.ReadLine());
+
+            int[,] games = new int[numberOfGames-1, 5];
+            
+            for(int n = 0; n < 6; n++)
+            {
+                for(int o = 0; o <= games.GetLength(0); o++)
+                {
+                    //TESTAUSGABE
+                    Console.WriteLine(games.GetLength(0));
+                }
+            }
+
         }
     }
 }
