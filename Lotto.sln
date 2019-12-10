@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotto.ConsoleApp", "Lotto.ConsoleApp\Lotto.ConsoleApp.csproj", "{9132329D-2BEA-4CBA-AA8A-6101F8EA1764}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9132329D-2BEA-4CBA-AA8A-6101F8EA1764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9132329D-2BEA-4CBA-AA8A-6101F8EA1764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9132329D-2BEA-4CBA-AA8A-6101F8EA1764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9132329D-2BEA-4CBA-AA8A-6101F8EA1764}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F3DE157-7DC4-477A-8831-88AB6ACED47B}
+	EndGlobalSection
+EndGlobal
