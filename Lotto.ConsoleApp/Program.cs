@@ -7,7 +7,10 @@ namespace Lotto.ConsoleApp
         static void Main(string[] args)
         {
             int[] tippedNumbers = new int[6];
+            int[] lotto = new int[6];
+            int[] lottoCounter = new int[7];
             int numberOfGames;
+            int counter;
             Random rand = new Random();
 
             Console.WriteLine("Lottosimulation 6 aus 45");
@@ -38,27 +41,73 @@ namespace Lotto.ConsoleApp
 
                 } while (tippedNumbers[i] < 1 || tippedNumbers[i] > 45);
             }
-            
-            // TESTAUSGABE
-            for(int m = 0; m < 6; m++)
+
+            /**
+            Console.Write("Dein Tipp:{0,-7}","");
+            for(int j = 0; j < tippedNumbers.Length; j++)
             {
-                Console.WriteLine(tippedNumbers[m]);
+                Console.Write("{0,3}", tippedNumbers[j]);
             }
+            Console.WriteLine("\n");
+            **/
 
             //LOTTOZIEHUNG
             Console.Write("Wie viele Ziehungen lang wollen sie teilnehmen: ");
             numberOfGames = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
-            int[,] games = new int[numberOfGames-1, 5];
-            
-            for(int n = 0; n < 6; n++)
+
+            for(int m = numberOfGames; m > 0; m--)
             {
-                for(int o = 0; o <= games.GetLength(0); o++)
+                counter = 0;
+                Console.Write("Ziehung Nr. {0,3}{1,-2}",numberOfGames-m+1,"");
+                for (int n = 0; n < 6; n++)
                 {
-                    //TESTAUSGABE
-                    Console.WriteLine(games.GetLength(0));
+                    do
+                    {
+                        lotto[n] = rand.Next(1, 46);
+                        for (int o = 0; o < n; o++)
+                        {
+                            
+                            if (lotto[o] == lotto[n])
+                            {
+                                lotto[n] = 0;
+                                
+                            }
+                        }
+                    } while (lotto[n] < 1 || lotto[n] > 45);
+
+                    Console.Write("{0,3}", lotto[n]);
+                }
+                
+                for(int p = 0; p < lotto.Length; p++)
+                {
+                    for(int r = 0; r < tippedNumbers.Length; r++)
+                    {
+                        if (lotto[p] == tippedNumbers[r])
+                        {
+                            counter++;
+                        }
+                    }
+                }
+
+                Console.WriteLine("   Ergebnis: {0} Richtige", counter);
+                lottoCounter[counter]++;
+            }
+
+            //GESAMTERGEBNIS
+            Console.WriteLine("\nGesamtergebnis:");
+            for(int s = 0; s < lottoCounter.Length; s++)
+            {
+                Console.Write("{0} Richtige: {1,-7}", s,lottoCounter[s]);
+                if (s == 2)
+                {
+                    Console.WriteLine();
                 }
             }
+          
+
+            
 
         }
     }
